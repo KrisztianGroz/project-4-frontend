@@ -14,21 +14,25 @@ function RobotsIndexCtrl(Robot) {
 
 }
 
-RobotsNewCtrl.$inject = ['Robot', 'User', '$state'];
-function RobotsNewCtrl(Robot, User, $state) {
+
+RobotsNewCtrl.$inject = ['Robot', 'User', '$state', '$auth'];
+function RobotsNewCtrl(Robot, User, $state, $auth) {
   const vm = this;
-  vm.robot = {};
-  vm.users = User.query();
+  vm.user = $auth.getPayload();
+  console.log(vm.user);
+  vm.robot = { user_id: vm.user.id  };
 
   function robotsCreate() {
     Robot
       .save({ robot: vm.robot })
       .$promise
       .then(() => $state.go('robotsIndex'));
+    console.log(vm.robot);
   }
 
   vm.create = robotsCreate;
 }
+
 
 RobotsShowCtrl.$inject = ['Robot', 'User', 'Comment', '$stateParams', '$state', '$auth'];
 function RobotsShowCtrl(Robot, User, Comment, $stateParams, $state, $auth) {

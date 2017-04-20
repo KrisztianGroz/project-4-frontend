@@ -30,7 +30,7 @@ function UsersIndexCtrl(User) {
 UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
 function UsersShowCtrl(User,  $stateParams, $state, $auth) {
   const vm = this;
-  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });   // need to find out how to get the robot id
+  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   vm.user = User.get($stateParams);
 
