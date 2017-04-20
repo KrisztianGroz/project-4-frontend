@@ -1,0 +1,13 @@
+<ul class="row">
+  <li ng-repeat="arena in arenasIndex.all" class="col-md-6">
+     <div class="arena"> <!-- for scss I guess  -->
+      <h2>{{ arena.name }}</h2>
+      <h3>{{ arena.location }}</h3>
+      <h4>{{ arena.event }}</h4>
+      <img ng-src="{{ arena.image }}">
+      <p>{{ arena.intro }}</p>
+      <p>Created by: <strong>{{ arena.user.nickname }}</strong></p>
+      <button ui-sref="arenasShow({id: arena.id})">View</button>
+    </div>
+  </li>
+</ul>

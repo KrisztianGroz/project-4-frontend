@@ -1,0 +1,15 @@
+<ul class="row">
+  <li ng-repeat="event in eventsIndex.all" class="col-md-6">
+    <div class="event">
+      <h2>{{ event.name }}</h2>
+      <h2>{{ event.date }}</h2>
+      <h2>{{ event.location }}</h2>
+      <img ng-src="{{ event.image }}">
+      <h2>{{ event.fighter }}</h2>
+      <h2>{{ event.time }}</h2>
+      <h2>{{ event.winner }}</h2>
+      <p>Created by: <strong>{{ event.user.nickname }}</strong></p>
+      <button ui-sref="eventsShow({id: event.id})">View</button>
+    </div>
+  </li>
+</ul>

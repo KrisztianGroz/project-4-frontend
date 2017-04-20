@@ -1,0 +1,13 @@
+<ul class="row">
+  <li ng-repeat="robot in robotsIndex.all" class="col-md-6">
+    <div class="robot">   <!-- for the css I guess -->
+      <h2>{{ robot.name }}</h2>
+      <img ng-src="{{ robot.image }}">
+      <h3>{{ robot.skill }}</h3>
+      <h3>{{ robot.demo }}</h3>
+      <h3>{{ robot.improvement }}</h3>
+      <p>Created by: <strong>{{ robot.user.nickname }}</strong></p>
+      <button ui-sref="robotsShow({id: robot.id})">View</button>
+    </div>
+  </li>
+</ul>

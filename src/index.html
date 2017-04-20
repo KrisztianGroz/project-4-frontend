@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="robocombat">
   <head>
+    <base href="/">
     <meta charset="utf-8">
-    <title>Angular Stack Setup</title>
+    <title>Welcome to Robocombat</title>
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body>
-    <h1>Hello</h1>
+  <body ng-controller="MainCtrl as main">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <ul class="nav navbar-nav">
+            <li><a ui-sref="home">RoboCombat</a></li>
+
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
+            <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
+
+            <li ng-if="main.isAuthenticated()"><a ui-sref="eventsIndex" ui-sref-active="active">Events</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="robotsIndex" ui-sref-active="active">Robots</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="arenasIndex" ui-sref-active="active">Arenas</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="usersIndex" ui-sref-active="active">Makers</a></li>
+            <li ng-if="main.isAuthenticated()"><a> {{main.currentUser.id}}</a></li>
+            <li ng-if="main.isAuthenticated()"><a> {{ main.usersIndex.nickname}}</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="message" ng-if="main.message">
+      <div class="container">{{main.message}}</div>
+    </div>
+    <main ui-view class="container"></main>
   </body>
 </html>
