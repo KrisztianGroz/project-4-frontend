@@ -28,13 +28,13 @@ function EventsNewCtrl(Event, Robot, $state) {
   vm.create = eventsCreate;
 }
 
-EventsShowCtrl.$inject = ['Event', 'Robot', 'Comment', '$stateParams', '$state', '$auth'];
-function EventsShowCtrl(Event, Robot, Comment, $stateParams, $state, $auth) {
+EventsShowCtrl.$inject = ['Event', 'Robot', 'User', 'Comment', '$stateParams', '$state', '$auth'];
+function EventsShowCtrl(Event, Robot, User, Comment, $stateParams, $state, $auth) {
   const vm = this;
-  if ($auth.getPayload()) vm.currentUser = Robot.get({ id: $auth.getPayload().id });   // need to find out how to get the robot id
+  if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });   // need to find out how to get the robot id
 
   vm.event = Event.get($stateParams);
-
+  console.log(vm.currentUser);
   function eventsDelete() {
     vm.event
       .$remove()
