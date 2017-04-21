@@ -17,3 +17,17 @@
     </div>
   </div>
 </div>
+<div class="col-md-6">
+  <div class="attendees">
+    <h5>Attending</h5>
+
+    <ul>
+      <li ng-repeat=" attendee in eventsShow.event.attendees"> {{ attendee.name}}hey hey </li>
+    </ul>
+
+  </div>
+</div>
+<button ng-click="eventsShow.toggleAttending()" ng-if="main.isAuthenticated() && !eventsShow.isAttending()"> Attend </button>
+<button ng-click="eventsShow.toggleAttending()" ng-if="main.isAuthenticated() && eventsShow.isAttending()"> Reject </button>   <!-- Not going to work , because always Authenticated -->
+
+<button ng-click="eventsShow.toggleAttending()">Attend</button>
