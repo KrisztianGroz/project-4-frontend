@@ -6,7 +6,7 @@ AuthCtrl.$inject = ['$auth', '$state'];
 function AuthCtrl($auth, $state) {
   const vm = this;
   vm.user = {};
-  
+
   function register() {
     $auth.signup(vm.user)
 

@@ -9,8 +9,8 @@
       <p>Created by: </p>
       <h4>{{ robotsShow.robot.user.nickname }}</h4>
 
-      <button ui-sref="robotsEdit({id: robotsShow.robot.id})" ng-if="main.currentUser.id === robotsShow.robot.id">Edit</button>
-      <button ng-click="robotsShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === robotsShow.robot.id">Delete</button>
+      <button ui-sref="robotsEdit({id: robotsShow.robot.id})" ng-if="main.currentUser.id === robotsShow.robot.user.id">Edit</button>
+      <button ng-click="robotsShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === robotsShow.robot.user.id">Delete</button>
       <!-- login after delete -->
     </div>
   </div>

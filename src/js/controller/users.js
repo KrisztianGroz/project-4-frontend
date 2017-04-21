@@ -12,27 +12,14 @@ function UsersIndexCtrl(User) {
   console.log(vm.all);
 }
 
-// UsersNewCtrl.$inject = ['User', '$state'];
-// function UsersNewCtrl(User, $state) {
-//   const vm = this;
-//   vm.user = {};
-//
-//   function usersCreate() {
-//     User
-//       .save({ user: vm.user })
-//       .$promise
-//       .then(() => $state.go('usersIndex'));
-//   }
-//
-//   vm.create = usersCreate;
-// }
-
 UsersShowCtrl.$inject = ['User', '$stateParams', '$state', '$auth'];
 function UsersShowCtrl(User,  $stateParams, $state, $auth) {
   const vm = this;
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
-  vm.user = User.get($stateParams);
+  vm.user = User.get($state.params);
+  console.log(vm.user);
+  console.log($auth.getPayload());
 
   function usersDelete() {
     vm.user
@@ -42,11 +29,11 @@ function UsersShowCtrl(User,  $stateParams, $state, $auth) {
 
   vm.delete = usersDelete;
 
-  function usersUpdate() {
-    User
-      .update({id: vm.user.id, user: vm.user });
-  }
-  usersUpdate();
+  // function usersUpdate() {
+  //   User
+  //     .update({id: vm.user.id, user: vm.user });
+  // }
+  // usersUpdate();
 }
   // function addComment() {
   //   vm.comment.user_id = vm.user.id;

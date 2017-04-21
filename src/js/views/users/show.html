@@ -9,9 +9,56 @@
       <h4>{{ usersShow.user.skill }}</h4>
       <h4>{{ usersShow.user.victory }}</h4>
       <h4>{{ usersShow.user.lose }}</h4>
-      {{usersShow.user.id}}
+      <!-- <h4>{{usersShow.user.robots}}  hello</h4> -->
+
+      <div class="userRobots">
+        <ul>
+          <li ng-repeat="robot in usersShow.user.robots">
+            <h4>{{ robot.name }}</h4>
+            <img ng-src="{{ robot.image }}">
+            <h4>{{ robot.skill }}</h4>
+            <h4>{{ robot.improvement }}</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="userArenas">
+        <ul>
+          <li ng-repeat="arena in usersShow.user.arenas">
+            <h4>{{ arena.name }}</h4>
+            <img ng-src="{{ arena.image }}">
+            <h4>{{ arena.location }}</h4>
+            <h4>{{ arena.intro }}</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="userEvents">
+        <ul>
+          <li ng-repeat="event in usersShow.user.events">
+            <h4>{{ event.name }}</h4>
+            <h4>{{ event.date }}</h4>
+            <h4>{{ event.location }}</h4>
+            <img ng-src="{{ event.image }}">
+            <h4>{{ event.fighter }}</h4>
+            <h4>{{ event.time }}</h4>
+            <h4>{{ event.winner }}</h4>
+          </li>
+        </ul>
+      </div>
+
+
       <button ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.currentUser.id === usersShow.user.id">Edit</button>
+
       <button ng-click="usersShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
+
+      <button  ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="eventsNew" >New Event</button>
+
+      <button  ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="arenasNew" >New Arena</button>
+
+      <button  ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="robotsNew" >New Robot</button>
+
+
       <!-- login after delete -->
     </div>
   </div>
