@@ -1,6 +1,17 @@
 <div class="row">
-  <div class="col-md-6">
+  <div >
     <div class="users">
+      <button class="userButton" cla ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.currentUser.id === usersShow.user.id">Edit</button>
+
+      <button class="userButton" ng-click="usersShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
+
+      <button  class="userButton" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="eventsNew" >New Event</button>
+
+      <button  class="userButton" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="arenasNew" >New Arena</button>
+
+      <button  class="userButton" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="robotsNew" >New Robot</button>
+
+
       <h2>{{ usersShow.user.nickname }}</h2>
       <img ng-src="{{ usersShow.user.photo }}">
       <h4>{{ usersShow.user.firstname }}</h4>
@@ -48,15 +59,15 @@
       </div>
 
 
-      <button ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.currentUser.id === usersShow.user.id">Edit</button>
+      <button class="userButton" ui-sref="usersEdit({id: usersShow.user.id})" ng-if="main.currentUser.id === usersShow.user.id">Edit</button>
 
-      <button ng-click="usersShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
+      <button class="userButton" ng-click="usersShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id">Delete</button>
 
-      <button  ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="eventsNew" >New Event</button>
+      <button  class="userButton" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="eventsNew" >New Event</button>
 
-      <button  ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="arenasNew" >New Arena</button>
+      <button class="userButton" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="arenasNew" >New Arena</button>
 
-      <button  ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="robotsNew" >New Robot</button>
+      <button class="userButton" ng-if="main.isAuthenticated() && main.currentUser.id === usersShow.user.id" ui-sref="robotsNew" >New Robot</button>
 
 
       <!-- login after delete -->

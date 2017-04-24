@@ -1,9 +1,9 @@
 <ul class="row">
-  <li ng-repeat="user in usersIndex.all" class="col-md-6">
+  <li ng-repeat="user in usersIndex.all" class="col-md-6 ">
     <div class="user"> <!-- for cssd I guess -->
 
       <h2>{{ user.nickname }}</h2>
-      <img ng-src="{{ user.photo }}">
+      <img class="img-circle" ng-src="{{ user.photo }}">
       <h2>{{ user.firstname }}</h2>
       <h2>{{ user.lastname }}</h2>
       <h2>{{ user.motto }}</h2>

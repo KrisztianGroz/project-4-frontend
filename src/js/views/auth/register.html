@@ -1,62 +1,62 @@
-<div class="row">
+<div id="rPage" class="row">
   <div class="col-md-6">
     <form ng-submit="auth.register()">
-      <div>
+      <div >
         <label>Nickname</label>
-        <input type="text" ng-model="auth.user.nickname">
+        <input class="inputRegister" type="text" ng-model="auth.user.nickname">
       </div>
 
       <div>
         <label>Avatar</label>
-        <input type="text" ng-model="auth.user.photo">
+        <input class="inputRegister" type="text" ng-model="auth.user.photo">
       </div>
 
       <div>
         <label>First name</label>
-        <input type="text" ng-model="auth.user.firstname">
+        <input class="inputRegister" type="text" ng-model="auth.user.firstname">
       </div>
 
       <div>
         <label>Last name</label>
-        <input type="text" ng-model="auth.user.lastname">
+        <input class="inputRegister" type="text" ng-model="auth.user.lastname">
       </div>
 
       <div>
         <label>Motto</label>
-        <input type="text" ng-model="auth.user.motto">
+        <input class="inputRegister" type="text" ng-model="auth.user.motto">
       </div>
 
       <div>
         <label>Special skill</label>
-        <input type="text" ng-model="auth.user.skill">
+        <input class="inputRegister" type="text" ng-model="auth.user.skill">
       </div>
 
       <div>
         <label>Victories</label>
-        <input type="text" ng-model="auth.user.victory">
+        <input class="inputRegister" type="text" ng-model="auth.user.victory">
       </div>
 
       <div>
         <label>Lose</label>
-        <input type="text" ng-model="auth.user.lose">
+        <input class="inputRegister" type="text" ng-model="auth.user.lose">
       </div>
 
       <div>
         <label>Email</label>
-        <input type="text" ng-model="auth.user.email">
+        <input class="inputRegister" type="text" ng-model="auth.user.email">
       </div>
 
       <div>
         <label>Password</label>
-        <input type="password" ng-model="auth.user.password">
+        <input class="inputRegister"  ng-model="auth.user.password">
       </div>
 
       <div>
         <label>Password Confirmation</label>
-        <input type="password" ng-model="auth.user.password_confirmation">
+        <input class="inputRegister"  ng-model="auth.user.password_confirmation">
       </div>
 
-      <button>Register</button>
+      <button id="registerButton">Register</button>
     </form>
   </div>
 </div>

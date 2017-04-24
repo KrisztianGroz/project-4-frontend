@@ -1,10 +1,40 @@
-<div class="row">
+<div class="" >
   <div class="col-md-6">
-    <div class="arena">
+
+    <div class="allDiv">
+      <div id="bodyCube" class="cube-container allDiv">
+        <div class="cube cube-large allDiv">
+          <figure class="front"></figure>
+          <figure class="back"></figure>
+          <figure class="right"></figure>
+          <figure class="left"></figure>
+          <figure class="top"></figure>
+          <figure class="bottom"></figure>
+        </div>
+
+        <div class="cube cube-small allDiv">
+          <figure class="front"></figure>
+          <figure class="back"></figure>
+          <figure class="right"></figure>
+          <figure class="left"></figure>
+          <figure class="top"></figure>
+          <figure class="bottom"></figure>
+        </div>
+
+        <div class="cube cube-xsmall allDiv">
+          <figure class="front"></figure>
+          <figure class="back"></figure>
+          <figure class="right"></figure>
+          <figure class="left"></figure>
+          <figure class="top"></figure>
+          <figure class="bottom"></figure>
+        </div>
+      </div>
+
       <h2>{{ arenasShow.arena.name }}</h2>
       <h2>{{ arenasShow.arena.location }}</h2>
       <h2>{{ arenasShow.arena.event }}</h2>
-      <img ng-src="{{ arenasShow.arena.image }}">
+      <img class="img-circle" ng-src="{{ arenasShow.arena.image }}">
       <h4>{{ arenasShow.arena.intro }}</h4>
       <p>Created by: </p>
       <h4>{{ arenasShow.arena.user.nickname }}</h4>
