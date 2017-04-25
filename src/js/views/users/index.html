@@ -1,9 +1,10 @@
-<ul class="row">
-  <li ng-repeat="user in usersIndex.all" class="col-md-6 ">
-    <div class="user"> <!-- for cssd I guess -->
 
-      <h2>{{ user.nickname }}</h2>
-      <img class="img-circle" ng-src="{{ user.photo }}">
+<ul class="row usersIndexPage">
+  <li ng-repeat="user in usersIndex.all" class="col-md-6 ">
+    <div class="userDiv"> <!-- for cssd I guess -->
+
+      <h1>{{ user.nickname }}</h1>
+      <img class="usersImage img-circle" ng-src="{{ user.photo }}">
       <h2>{{ user.firstname }}</h2>
       <h2>{{ user.lastname }}</h2>
       <h2>{{ user.motto }}</h2>
@@ -11,7 +12,7 @@
       <h2>{{ user.victory }}</h2>
       <h3>{{ user.lose }}</h3>
 
-      <button ui-sref="usersShow({id: user.id})">View</button>
+      <button class="indexButton" ui-sref="usersShow({id: user.id})">View</button>
     </div>
   </li>
 </ul>

@@ -1,47 +1,49 @@
-<div class="" >
-  <div class="col-md-6">
-
-    <div class="allDiv">
-      <div id="bodyCube" class="cube-container allDiv">
-        <div class="cube cube-large allDiv">
-          <figure class="front"></figure>
-          <figure class="back"></figure>
-          <figure class="right"></figure>
-          <figure class="left"></figure>
-          <figure class="top"></figure>
-          <figure class="bottom"></figure>
-        </div>
-
-        <div class="cube cube-small allDiv">
-          <figure class="front"></figure>
-          <figure class="back"></figure>
-          <figure class="right"></figure>
-          <figure class="left"></figure>
-          <figure class="top"></figure>
-          <figure class="bottom"></figure>
-        </div>
-
-        <div class="cube cube-xsmall allDiv">
-          <figure class="front"></figure>
-          <figure class="back"></figure>
-          <figure class="right"></figure>
-          <figure class="left"></figure>
-          <figure class="top"></figure>
-          <figure class="bottom"></figure>
-        </div>
-      </div>
-
+<div class="mainShowDiv">
       <h2>{{ arenasShow.arena.name }}</h2>
-      <h2>{{ arenasShow.arena.location }}</h2>
-      <h2>{{ arenasShow.arena.event }}</h2>
-      <img class="img-circle" ng-src="{{ arenasShow.arena.image }}">
+      <img class="showPageImage" ng-src="{{ arenasShow.arena.image }}">
+
+      <ul class="robotShowPage">
+      <h5>The location</h5>
+      <h4>{{ arenasShow.arena.location }}</h4>
+      <h5>wgat is the next event</h5>
+      <h4>{{ arenasShow.arena.event }}</h4>
+      <h5>Small description</h5>
       <h4>{{ arenasShow.arena.intro }}</h4>
-      <p>Created by: </p>
+      <h5>Who is the host</h5>
       <h4>{{ arenasShow.arena.user.nickname }}</h4>
 
-      <button ui-sref="arenasEdit({id: arenasShow.arena.id})" ng-if="main.currentUser.id === arenasShow.arena.user.id">Edit</button>
-      <button ng-click="arenasShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === arenasShow.arena.user.id">Delete</button>
+      <button class="showPageButton"　ui-sref="arenasEdit({id: arenasShow.arena.id})" ng-if="main.currentUser.id === arenasShow.arena.user.id">Edit</button>
+      <button class="showPageButton"　ng-click="arenasShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === arenasShow.arena.user.id">Delete</button>
       <!-- login after delete -->
-    </div>
+      </ul>
   </div>
-</div>
+
+<!--
+  <div id="bodyCube" class="cube-container allDiv">
+    <div class="cube cube-large allDiv">
+      <figure class="front"></figure>
+      <figure class="back"></figure>
+      <figure class="right"></figure>
+      <figure class="left"></figure>
+      <figure class="top"></figure>
+      <figure class="bottom"></figure>
+    </div>
+
+    <div class="cube cube-small allDiv">
+      <figure class="front"></figure>
+      <figure class="back"></figure>
+      <figure class="right"></figure>
+      <figure class="left"></figure>
+      <figure class="top"></figure>
+      <figure class="bottom"></figure>
+    </div>
+
+    <div class="cube cube-xsmall allDiv">
+      <figure class="front"></figure>
+      <figure class="back"></figure>
+      <figure class="right"></figure>
+      <figure class="left"></figure>
+      <figure class="top"></figure>
+      <figure class="bottom"></figure>
+    </div>
+  </div> -->

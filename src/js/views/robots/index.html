@@ -1,32 +1,14 @@
-<ul class="row">
+<ul class="row robotsIndexPage">
   <li ng-repeat="robot in robotsIndex.all" class="col-md-6">
-    <div class="robot">   <!-- for the css I guess -->
+    <div class="robotDiv">   <!-- for the css I guess -->
+
+      <img class="robotsImage thumbnail" ng-src="{{ robot.image }}">
       <h2>{{ robot.name }}</h2>
-      <img ng-src="{{ robot.image }}">
       <h3>{{ robot.skill }}</h3>
       <h3>{{ robot.demo }}</h3>
       <h3>{{ robot.improvement }}</h3>
       <p>Created by: <strong>{{ robot.user.nickname }}</strong></p>
-      <button ui-sref="robotsShow({id: robot.id})">View</button>
-    </div>
-  </li>
-</ul>
-
-
-<ul class="row">
-  <li ng-repeat="user in usersIndex.all" class="col-md-6">
-    <div class="user"> <!-- for cssd I guess -->
-
-      <h2>{{ user.nickname }}</h2>
-      <img ng-src="{{ user.photo }}">
-      <h2>{{ user.firstname }}</h2>
-      <h2>{{ user.lastname }}</h2>
-      <h2>{{ user.motto }}</h2>
-      <h2>{{ user.skill }}</h2>
-      <h2>{{ user.victory }}</h2>
-      <h3>{{ user.lose }}</h3>
-
-      <button ui-sref="usersShow({id: user.id})">View</button>
+      <button class="indexButton" ui-sref="robotsShow({id: robot.id})">View</button>
     </div>
   </li>
 </ul>

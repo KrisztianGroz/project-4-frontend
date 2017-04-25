@@ -1,30 +1,40 @@
-<div class="row">
-  <div class="col-md-6">
-    <div class="event">
-      <h2>{{ eventsShow.event.name }}</h2>
-      <h2>{{ eventsShow.event.date }}</h2>
-      <h2>{{ eventsShow.event.location }}</h2>
-      <img ng-src="{{ eventsShow.event.image }}">
+<div class="mainShowDiv">
+  <h2>{{ eventsShow.event.name }}</h2>
+  <img  class="showPageImage" ng-src="{{ eventsShow.event.image }}">
+    <ul class="robotShowPage">
+
+
+      <h5>The date of the event:</h5>
+      <h4>{{ eventsShow.event.date }}</h4>
+      <h5>Location</h5>
+      <h4>{{ eventsShow.event.location }}</h4>
+      <h5>The fighters</h5>
       <h4>{{ eventsShow.event.fighter }}</h4>
+      <h4 ng-repeat="attendee in eventsShow.event.attendees"> {{ attendee.nickname }} </h4>
+      <h5>What the robot's skill</h5>
       <h4>{{ eventsShow.event.time }}</h4>
+      <h5>What the robot's skill</h5>
       <h4>{{ eventsShow.event.winner }}</h4>
-      <p>Created by: </p>
+      <h5>Created by:</h5>
       <h4>{{ eventsShow.event.user.nickname }}</h4>
 
-      <button ui-sref="eventsEdit({id: eventsShow.event.id})" ng-if="main.currentUser.id === eventsShow.event.user.id">Edit</button>
-      <button ng-click="eventsShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === eventsShow.event.user.id">Delete</button>
-      <!-- login after delete -->
-    </div>
-  </div>
-</div>
-<div class="col-md-6">
-  <div class="attendees">
-    <h5>Attending</h5>
-    <ul>
-  <li ng-repeat="attendee in eventsShow.event.attendees">{{ attendee.nickname }}</li>
-</ul>
+      <button class="showPageButton" ui-sref="eventsEdit({id: eventsShow.event.id})" ng-if="main.currentUser.id === eventsShow.event.user.id">Edit</button>
+      <button  class="showPageButton"  ng-click="eventsShow.delete() " ng-if="main.isAuthenticated() && main.currentUser.id === eventsShow.event.user.id">Delete</button>
 
-  </div>
-</div>
-<button ng-click="eventsShow.toggleAttending()" ng-if="main.isAuthenticated() && !eventsShow.isAttending()">Attend</button>
-<button ng-click="eventsShow.toggleAttending()" ng-if="main.isAuthenticated() && eventsShow.isAttending()">Leave</button>
+      <button  class="showPageButton"  ng-click="eventsShow.toggleAttending()" ng-if="main.isAuthenticated() && !eventsShow.isAttending()">Attend</button>
+      <button  class="showPageButton" ng-click="eventsShow.toggleAttending()" ng-if="main.isAuthenticated() && eventsShow.isAttending()">Leave</button>
+      <!-- login after delete -->
+      </ul>
+    </div>
+    <div class="mainShowExtra">
+      <h3>Attending</h3>
+        <ul>
+          <h2 ng-repeat="attendee in eventsShow.event.attendees"><strong>{{ attendee.nickname }}</strong></h2>
+        </ul>
+
+    </div>
+
+    <div class="mainShowExtra">
+      <h3>Media</h3>
+        <iframe  src="https://www.youtube.com/embed/Rt9F5hA2CPs" frameborder="0" allowfullscreen></iframe>
+    </div>

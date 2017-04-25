@@ -8,7 +8,6 @@ img{
 
 
   .navbar {
-
       font-family: Ailerons, sans-serif;
       padding-top: 15px;
       padding-bottom: 15px;
@@ -19,15 +18,15 @@ img{
       letter-spacing: 5px;
       line-height: 1.8;
       color: maroon;
-
   }
+
   .navbar-nav  li a:hover {
       color: red !important;
   }
 /// robot 1 start
 
 
-*{
+* {
 
 }
 #loginPage {
@@ -45,14 +44,13 @@ img{
 
 }
 .robot{
-
    width: 204px;
    height: auto;
    margin: auto;
    position: relative;
 }
 .animationRobot1 {
-  animation: hover 5s cubic-bezier(.200,.90,.90,.90) infinite
+  animation: hover 5s cubic-bezier(.200,.90,.90,.90) infinite;
 }
 @keyframes hover {
   0% {transform: translateY(20px);}
@@ -261,90 +259,97 @@ html, body {
 }
 // Robot3 end
 
-// // Robot 4 start
-// svg {
-//   transform: scale(.5);
-//   overflow: visible;
-// }
-//
-// #secondfinger_1_ {
-//   transform-origin: 10% 10%
-//   .addAnimation(moveSecondFinger, .6s);
-// }
-//
-// #firstfinger_1_ {
-//   transform-origin: 10% 10%;
-//   .addAnimation(moveFirstFinger, .6s);
-// }
-//
-// #claw_1_ {
-//   transform-origin: 12% 12%;
-//   .addAnimation(moveClaw, 1.5s);
-// }
-//
-// #forearm_1_ {
-//   transform-origin: 9% 9%;
-//   .addAnimation(moveForearm, 2.6s);
-// }
-//
-// #arm_1_ {
-//   transform-origin: 9% 9%;
-//   .addAnimation(moveArm, 2.6s);
-// }
-//
-// .addAnimation(@name, @duration) {
-//   animation-name: @name;
-//   animation-duration: @duration;
-//   animation-timing-function: linear;
-//   animation-iteration-count: infinite;
-//   animation-direction: alternate;
-// }
-//
-// @keyframes moveFirstFinger {
-//   0% {
-//     transform: rotate(-30deg);
-//   }
-//   100% {
-//     transform: rotate(0deg);
-//   }
-// }
-//
-// @keyframes moveSecondFinger {
-//   0% {
-//     transform: rotate(30deg);
-//   }
-//   100% {
-//     transform: rotate(0deg);
-//   }
-// }
-//
-// @keyframes moveClaw {
-//   0% {
-//     transform: rotate(20deg);
-//   }
-//   100% {
-//     transform: rotate(-20deg);
-//   }
-// }
-//
-// @keyframes moveForearm {
-//   0% {
-//     transform: rotate(30deg);
-//   }
-//   100% {
-//     transform: rotate(-30deg);
-//   }
-// }
-//
-// @keyframes moveArm {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(5deg);
-//   }
-// }
-//
+svg.blue-robot-container {
+  overflow: visible;
+  position: fixed;
+  top: 150px;
+  right: 20%;
+}
+
+// Robot 4 start
+svg {
+  transform: scale(.5);
+  overflow: visible;
+}
+
+@mixin addAnimation($name, $duration) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#secondfinger_1_ {
+  transform-origin: 10% 10%;
+  @include addAnimation(moveSecondFinger, .6s);
+}
+
+#firstfinger_1_ {
+  transform-origin: 10% 10%;
+  @include addAnimation(moveFirstFinger, .6s);
+}
+
+#claw_1_ {
+  transform-origin: 12% 12%;
+  @include addAnimation(moveClaw, 1.5s);
+}
+
+#forearm_1_ {
+  transform-origin: 9% 9%;
+  @include addAnimation(moveForearm, 2.6s);
+}
+
+#arm_1_ {
+  transform-origin: 9% 9%;
+  @include addAnimation(moveArm, 2.6s);
+}
+
+@keyframes moveFirstFinger {
+  0% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes moveSecondFinger {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes moveClaw {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes moveForearm {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes moveArm {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
 // // Robot4 end
 
 
@@ -567,6 +572,17 @@ button{
 
 
 // Robot Show Page CSS Start
+ul.user-owned {
+  list-style: none;
+  background-color: grey;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+  }
+}
+
+
 .userButton{
   display: inline-block;
   width: 200px;
@@ -764,15 +780,19 @@ $speed: 5250ms;
             flex-grow: 1; }
 
   .preview-thumbnail.nav-tabs {
+    display: inline-block;
     border: none;
     margin-top: 15px; }
     .preview-thumbnail.nav-tabs li {
+      display: inline-block;
       width: 18%;
       margin-right: 2.5%; }
       .preview-thumbnail.nav-tabs li img {
         max-width: 100%;
-        display: block; }
+        display: inline-block; }
       .preview-thumbnail.nav-tabs li a {
+        display: inline-block;
+        float: right;
         padding: 0;
         margin: 0; }
       .preview-thumbnail.nav-tabs li:last-of-type {
@@ -790,6 +810,7 @@ $speed: 5250ms;
   .card {
     margin-top: 50px;
     background: #eee;
+
     padding: 3em;
     line-height: 1.5em; }
 
@@ -897,3 +918,218 @@ $speed: 5250ms;
       opacity: 1;
       -webkit-transform: scale(1);
               transform: scale(1); } }
+
+
+
+// Arena Index show page
+.arena {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(black, 0.4);
+  border-bottom: 10px solid rgba(purple, 0.4);
+  border-top: 10px solid rgba(purple, 0.4);
+  margin-top: 60px;
+  color: white;
+  .arenaImage{
+    width: 100%;
+    height: 180;
+
+    margin: 0px;
+    float: right;
+    position: sticky;
+  }
+}
+.arenaIndexPage{
+  background-image: url('https://s-media-cache-ak0.pinimg.com/736x/cd/f6/ae/cdf6aee51f19dafadd5d11aeef2d4b4d.jpg');
+  background-repeat: space;
+}
+.usersIndexPage{
+  background-image: url('https://i1.wp.com/gadgetynews.com/wp-content/uploads/2017/03/TankBot.jpg') ;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.robotsIndexPage {
+  background-image: url('http://s3images.coroflot.com/user_files/individual_files/original_46030_J5YBwDw_GRoe3tUTfK9FM5vNH.jpg');
+  background-size: contain;
+  background-repeat: space;
+
+}
+
+.robotDiv {
+
+    padding: 20px;
+    text-align: center;
+    font-family: Lato, sans-serif;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(black, 0.4);
+    border-bottom: 10px solid rgba(114, 165, 228,  0.4);
+    border-top: 10px solid rgba(114, 165, 228, 0.4);
+    margin-top: 60px;
+    color: white;
+    .robotsImage{
+      width: 100%;
+      height: 50%;
+    }
+
+
+
+}
+.indexButtonArena {
+  color: rgba(193, 169, 31, 0.8);
+  font-family: 'Nexa Rust Sans', sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: rgba(black, 0.8);
+  border-bottom: 10px solid rgba(193, 169, 31, 0.4);
+  border-top: 10px solid rgba(193, 169, 31, 0.4);
+  margin: 0 auto;
+  width: 80%;
+  &:hover{
+    background-color: rgba(57, 219, 167, 1);
+  }
+}
+.indexButton {
+  font-family: 'Nexa Rust Sans', sans-serif;
+  font-size: 20px;
+  background-color: rgba(178, 125, 46, 0.8);
+  border-bottom: 10px solid rgba(193, 169, 31, 0.4);
+  border-top: 10px solid rgba(193, 169, 31, 0.4);
+  margin: 0 auto;
+  width: 80%;
+  &:hover{
+    background-color: rgba(57, 219, 167, 1);
+  }
+}
+.userDiv {
+
+      h1{
+        font-family: Nexa Rust Sans, sans-serif;
+      }
+      padding: 20px;
+      text-align: center;
+
+      width: 100%;
+      border-radius: 80px;
+      background-color: rgba(black, 0.4);
+      border-left: 20px solid rgba(black,  0.4);
+      border-right: 10px solid rgba(114, 165, 228, 0.4);
+      margin-top: 60px;
+      color: white;
+      .usersImage{
+        border: 10px solid rgba(white,  0.4);
+        box-shadow: 100px;
+        margin-top: 20px;
+        width: 100%;
+        height: 50%;
+      }
+}
+
+
+.mainShowDiv{
+
+  display: block;
+  text-align: center;
+  font-family: Ailerons, sans-serif;
+  border-radius: 5px;
+  color: maroon;
+  margin-top: 100px;
+  background-color: rgba(50, 93, 236, 0.7);
+  padding: 10px;
+  h2{
+    font-size: 80px;
+
+  }
+
+
+background-image: url('https://images.designtrends.com/wp-content/uploads/2015/12/15124822/Metal-Scratch-background.jpg');
+
+}
+.mainShowExtra{
+  float: left;
+  width: 49%;
+  // display: block;
+  text-align: center;
+  font-family: Ailerons, sans-serif;
+  border-radius: 5px;
+  color: maroon;
+  margin-bottom: 50px;
+  margin-right: 10px;
+  background-color: rgba(50, 93, 236, 0.7);
+  padding: 10px;
+  iframe{
+    width: 95%;
+    height: 400px;
+
+
+  }
+  h2{
+    font-size: 60px;
+
+
+  }
+  h3{
+    color: rgba(36, 14, 28, 0.8);
+    font-size: 40px;
+    font-family: Nexa Rust Sans, sans-serif;
+
+  }
+
+
+background-image: url('https://images.designtrends.com/wp-content/uploads/2015/12/15124822/Metal-Scratch-background.jpg');
+
+}
+.showPageImage{
+  display: block;
+  margin-top: 50px;
+  margin-bottom:  50px;
+  border: 4px solid black;
+  width: 50%;
+  height: 80%;
+  float: left;
+
+}
+
+
+.robotShowPage {
+  font-size: 40px;
+  background-image: url('https://images.designtrends.com/wp-content/uploads/2015/12/15124822/Metal-Scratch-background.jpg');
+  color: black;
+  margin-top: 100px;
+  float: right;
+  width: 50%;
+  height: 100%;
+  font-family: 'Nexa Rust Sans', sans-serif;
+  background-color: rgba(grey, 0.4);
+  text-align: left;
+  margin-top: 50px;
+
+  h4{
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    background-color: rgba(white, 0.6);
+  }
+}
+  .showPageButton{
+
+    font-family: 'Ailerons', sans-serif;
+    font-weight: bolder;
+    color: maroon;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    font-size: 30px;
+    margin: 30px;
+    background-color: rgba(white, 0.8);
+  }
+  .showPageButton:hover{
+    background-color: rgba(57, 219, 167, 0.8);
+
+  }
